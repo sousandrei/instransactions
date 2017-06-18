@@ -3,8 +3,8 @@
 		"destination": "./jsdocs"
 	},
 	"templates": {
-		"systemName": "Monkey",
-		"copyright": "Akuntsu@2017",
+		"systemName": "Instransaction",
+		"copyright": "Andrei Sousa",
 		"navType": "vertical",
 		"default": {
 			"outputSourceFiles": false

@@ -1,0 +1,19 @@
+{
+	"opts": {
+		"destination": "./jsdocs"
+	},
+	"templates": {
+		"systemName": "Monkey",
+		"copyright": "Akuntsu@2017",
+		"navType": "vertical",
+		"default": {
+			"outputSourceFiles": false
+		},
+		"cleverLinks": true,
+		"monospaceLinks": true,
+		"path": "ink-docstrap",
+		"theme": "paper",
+		"linenums": true,
+		"dateFormat": "MMMM Do YYYY, h:mm:ss a"
+	}
+}

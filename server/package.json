@@ -1,0 +1,44 @@
+{
+  "name": "instransactions",
+  "version": "1.0.0",
+  "author": "Andrei Sousa",
+  "private": true,
+  "license": "UNLICENCED",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "body-parser": "^1.17.2",
+    "compression": "^1.6.2",
+    "connect-mongo": "^1.3.2",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "lodash": "^4.17.4",
+    "lodash-inflection": "^1.5.0",
+    "method-override": "^2.3.9",
+    "moment": "^2.18.1",
+    "mongodb-backup": "^1.6.9",
+    "mongodb-restore": "^1.6.2",
+    "mongoose": "^4.10.6",
+    "morgan": "^1.8.2",
+    "passport": "^0.2.2",
+    "passport-local": "^1.0.0",
+    "request": "^2.81.0",
+    "socket.io": "^1.7.4"
+  },
+  "scripts": {
+    "jsdoc": "jsdoc ./app/ -r --readme ./README.md --destination ./docs -c ./.jsdoc.json",
+    "apidoc": "apidoc -i app/ -o apidocs/",
+    "pretest": "eslint app/ test/ config/ ./*.js",
+    "start": "node index.js",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec -b"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.5",
+    "eslint": "^2.13.1",
+    "faker": "^3.1.0",
+    "istanbul": "^0.4.4",
+    "jsdoc": "^3.4.0",
+    "mocha": "^2.5.3",
+    "supertest": "^1.2.0"
+  }
+}

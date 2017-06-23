@@ -9,42 +9,52 @@ const Schema = Mongoose.Schema
 const User = new Schema({
 	/**
 	 * primeiro nome
-	 * @memberof Person
+	 * @memberof User
 	 * @instance
 	 */		
 	firstName: String,
 	
 	/**
 	 * segundo nome
-	 * @memberof Person
+	 * @memberof User
 	 * @instance
 	 */		
 	lastName: String,
+
+	/**
+	 * segundo nome
+	 * @memberof User
+	 * @instance
+	 */		
+	friends: [{
+		type: Schema.ObjectId,
+		ref: 'User'
+	}],
 	
 	/**
 	 * cadastro de pessoa fisica - cpf
-	 * @memberof Person
+	 * @memberof User
 	 * @instance
 	 */	
 	cpf: String,
 
 	/**
 	 * telefone
-	 * @memberof Person
+	 * @memberof User
 	 * @instance
 	 */	
 	phone: String,
 	
 	/**
 	 * string com o blob da foto
-	 * @memberof Person
+	 * @memberof User
 	 * @instance
 	 */	
 	photo: String,
 
 	/**
 	 * email
-	 * @memberof Person
+	 * @memberof User
 	 * @instance
 	 */	
 	email: String,
@@ -81,7 +91,7 @@ const User = new Schema({
 
 	/**
 	 * variavel que armazena as rotas e permissoes de cada
-	 * @memberof Role
+	 * @memberof User
 	 * @instance
 	 */
 	routes: Object,

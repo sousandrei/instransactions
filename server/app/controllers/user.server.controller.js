@@ -87,10 +87,10 @@ exports.patch = (req, res) => {
 			/* istanbul ignore if  */
 			if (err)
 				return res.status(500).json(err)
-			else{
+			else {
 				delete result.password
 				delete result.salt
-				
+
 				return res.json(result)
 			}
 		})
@@ -172,7 +172,8 @@ exports.logOut = (req, res) => {
 	})
 }
 
-exports.loginApi = (req, res) => res.end()
+exports.loginApi = (req, res) => res.json({ 'set-cookie': req.headers.cookie })
+
 
 /**
  * autentica o requerente no banco de dados

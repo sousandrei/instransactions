@@ -26,7 +26,7 @@
     "socket.io": "^1.7.4"
   },
   "scripts": {
-    "jsdoc": "jsdoc ./app/ -r --readme ./README.md --destination ./docs -c ./.jsdoc.json",
+    "jsdoc": "jsdoc ./app/ -r --readme ./README.md --destination ./jsdocs -c ./.jsdoc.json",
     "apidoc": "apidoc -i app/ -o apidocs/",
     "pretest": "eslint app/ test/ config/ ./*.js",
     "start": "node index.js",

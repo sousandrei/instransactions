@@ -60,9 +60,9 @@ Async.series([
 	},
 	(callback) => {
 		for (let i = 0; i < DB_SIZE - 1; i++)
-			db.user[i].friends = db.user[i + 1]._id
+			db.users[i].friends = db.users[i + 1]._id
 
-		db.user[DB_SIZE - 1].friends = db.user[0]._id
+		db.users[DB_SIZE - 1].friends = db.users[0]._id
 
 		callback()
 	},

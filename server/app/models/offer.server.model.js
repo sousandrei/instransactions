@@ -62,6 +62,13 @@ const Offer = new Schema({
 	 * @instance
 	 */	
 	photo: String,
+	
+	/**
+	 * descricao curta da oferta
+	 * @memberof Offer
+	 * @instance
+	 */	
+	desc: String,
 
 	/**
 	 * variavel de delecao logica

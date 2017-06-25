@@ -4,7 +4,7 @@ module.exports = {
 	MID_URL: 'https://127.0.0.1:9423/',
 	CERT: './ssl/sample/device.crt',
 	KEY: './ssl/sample/device.key',
-	HTTP: 80,
-	HTTPS: 443,
+	HTTP: 8080,
+	HTTPS: 4430,
 	pageSize: 10
 }

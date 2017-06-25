@@ -16,16 +16,13 @@ const { pageSize } = require('../../config/config')
  * @static
  */
 exports.get = (req, res) => {
-	User.find(req.query, '-password -salt')
-		.limit(pageSize)
-		.skip(req.page * pageSize)
-		.exec((err, result) => {
-			/* istanbul ignore if  */
-			if (err)
-				return res.status(500).json(err)
-			else
-				return res.json(result)
-		})
+	User.find(req.query, (err, result) => {
+		/* istanbul ignore if  */
+		if (err)
+			return res.status(500).json(err)
+		else
+			return res.json(result)
+	})
 }
 
 /**

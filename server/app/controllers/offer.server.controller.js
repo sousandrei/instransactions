@@ -15,16 +15,13 @@ const { pageSize } = require('../../config/config')
  * @static
  */
 exports.get = (req, res) => {
-	Offer.find(req.query)
-		.limit(pageSize)
-		.skip(req.page * pageSize)
-		.exec((err, result) => {
-			/* istanbul ignore if  */
-			if (err)
-				return res.status(500).json(err)
-			else
-				return res.json(result)
-		})
+	Offer.find(req.query, (err, result) => {
+		/* istanbul ignore if  */
+		if (err)
+			return res.status(500).json(err)
+		else
+			return res.json(result)
+	})
 }
 
 /**

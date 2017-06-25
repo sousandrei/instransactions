@@ -27,7 +27,7 @@ Async.series([
 	},
 	(callback) => {
 		db.users = []
-		
+
 		for (let i = 0; i < DB_SIZE; i++)
 			db.users.push(require('../test/entitys/user.js')())
 
@@ -52,6 +52,17 @@ Async.series([
 			db.offers[i].seller = db.users[j]
 			db.offers[i].buyer = db.users[j + 1]
 		}
+
+		db.users[0].username = 'admin'
+		db.users[0].password = 'admin123456'
+
+		callback()
+	},
+	(callback) => {
+		db.user[DB_SIZE].friends = db.user[0]._id
+
+		for (let i = 0; i < DB_SIZE - 1; i++)
+			db.user[i].friends = db.user[i + 1]._id
 
 		db.users[0].username = 'admin'
 		db.users[0].password = 'admin123456'

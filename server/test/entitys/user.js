@@ -12,6 +12,8 @@ module.exports = function () {
 		firstName: Faker.name.firstName(),
 		lastName: Faker.name.firstName(),
 
+		friends: [0,1,2],
+
 		cpf: Faker.random.number(),
 		phone: Faker.random.number(),
 		

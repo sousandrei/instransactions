@@ -20,9 +20,11 @@ module.exports = function () {
 			Faker.random.boolean() ? 'pending' : 'done',
 
 
+		name: Faker.name.firstName(),
+
 		photo: Faker.image.avatar(),
 
-		name: Faker.name.firstName(),
+		desc: Faker.lorem.lines(1),
 
 		deleted: false
 	}

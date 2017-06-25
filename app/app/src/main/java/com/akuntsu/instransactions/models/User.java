@@ -14,7 +14,7 @@ public class User {
 
     private static final String TAG = "USER";
 
-    private int id;
+    private String id;
     private String firstName;
     private String lastName;
     private String cpf;
@@ -26,7 +26,7 @@ public class User {
 
     private ArrayList<User> friends = new ArrayList<User>();
 
-    public User(int id, String username){
+    public User(String id, String username){
         this.id = id;
         this.username = username;
     }
@@ -104,21 +104,8 @@ public class User {
 //        this.friends.remove(this.friends.size() + 1, friend);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
-
-    /*
-    * firstName
-    * lastName
-    * friends
-    * cpf
-    * phone
-    * photo
-    * email
-    * username
-    * password
-    * routes
-    * */
 
 }

@@ -59,13 +59,10 @@ Async.series([
 		callback()
 	},
 	(callback) => {
-		db.user[DB_SIZE].friends = db.user[0]._id
-
 		for (let i = 0; i < DB_SIZE - 1; i++)
 			db.user[i].friends = db.user[i + 1]._id
 
-		db.users[0].username = 'admin'
-		db.users[0].password = 'admin123456'
+		db.user[DB_SIZE - 1].friends = db.user[0]._id
 
 		callback()
 	},

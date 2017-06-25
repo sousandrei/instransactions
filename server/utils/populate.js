@@ -26,6 +26,8 @@ Async.series([
 		})
 	},
 	(callback) => {
+		db.users = []
+		
 		for (let i = 0; i < DB_SIZE; i++)
 			db.users.push(require('../test/entitys/user.js')())
 

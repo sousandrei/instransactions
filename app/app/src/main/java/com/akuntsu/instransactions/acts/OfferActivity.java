@@ -1,12 +1,11 @@
 package com.akuntsu.instransactions.acts;
 
 import android.app.DialogFragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,6 +19,7 @@ import android.widget.ListView;
 
 import com.akuntsu.instransactions.Config;
 import com.akuntsu.instransactions.R;
+import com.akuntsu.instransactions.Singletons.State;
 import com.akuntsu.instransactions.adapters.OfferAdapter;
 import com.akuntsu.instransactions.fragments.AddOfferFragment;
 import com.akuntsu.instransactions.models.Offer;
@@ -28,12 +28,15 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.CookieHandler;
+import java.net.CookieManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +57,12 @@ public class OfferActivity extends AppCompatActivity implements AddOfferFragment
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        CookieHandler.setDefault(State.getCookieManager());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_offer);
 
@@ -92,6 +99,7 @@ public class OfferActivity extends AppCompatActivity implements AddOfferFragment
         mAdapter = new OfferAdapter(context, offerList);
         mRecyclerView.setAdapter(mAdapter);
         getOffers();
+        getSelf(findViewById(R.id.offer_layout));
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -162,5 +170,26 @@ public class OfferActivity extends AppCompatActivity implements AddOfferFragment
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
 
+    }
+
+    private void getSelf(final View v) {
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                (Request.Method.GET, Config.server + "/self", null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                State.setUser(response);
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, String.valueOf(error));
+                        Snackbar.make(v, "erro ao fazer request de si",
+                                Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
+                });
+
+        queue.add(jsObjRequest);
     }
 }

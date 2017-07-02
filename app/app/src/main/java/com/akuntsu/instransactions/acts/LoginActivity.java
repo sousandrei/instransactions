@@ -31,6 +31,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.net.CookieHandler;
+import java.net.CookieManager;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -58,6 +60,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        State.setCookieManager(new CookieManager());
+
+        CookieHandler.setDefault(State.getCookieManager());
 
         new NukeSSLCerts().nuke();
 
@@ -112,8 +118,6 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             if (cancel) {
-                // There was an error; don't attempt login and focus the first
-                // form field with an error.
                 focusView.requestFocus();
             } else {
                 JSONObject user = new JSONObject();

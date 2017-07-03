@@ -2,6 +2,7 @@
 
 Aluno: Andrei Felipe Silveira Sousa - 13/0039985
 sousandrei@outlook.com
+Rodrigo de Sousa Saldanha - 11/0139143
 
 ## SERVER
 

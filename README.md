@@ -43,10 +43,10 @@ Linguagem JAVA (similar a C++ que seria usada no projeto padrao, usando Qt)
 
 Testes usados serao em JUnit, com suporte a cobertura
 
-## GITHUB
-
-https://github.com/sousandrei/instransactions
-
 Documentacao usada sera JAVADOC (mesma de C++ no oxygen)
 
 O App ja vem pre-configurado para conversar com o servidor que esta rodando na Google Cloud.
+
+## GITHUB
+
+https://github.com/sousandrei/instransactions

@@ -1,0 +1,19 @@
+Andrei Sousa - 130039985
+
+Data    |  Horas Trabalhadas | Tipo Tarefa            | Descrição da Tarefa Realizada
+16/06       4  horas            Projetar                 Projetar servidor do app
+16/06       1  hora             Fazer diagramas          Diagramas de software do app
+17/06       1  hora             Especificar os módulos   Módulos do servidor do app
+17/06	    16 horas            Codificar módulos        Código do servidor do app
+18/06	    2  hora             Realizar os testes       Ver se está tudo funcionando server side.
+20/06       5  hora             Realizar os testes       Testes de request.
+20/06       4  horas            Revisar projetos         Revisar código do servidor.
+21/06       1  hora             Projetar                 Projetar app.
+21/06       1  hora             Fazer diagramas          Diagramas de software do app.
+24/06       3  horas            Arquitetura              Desenho da arquitetura para fácil entendimento.
+21/06       14 horas            Codificar módulos        Código do aplicativo.
+22/06       2  horas            Revisar projetos         Revisar app e servidor.
+23/06       1  horas            Codificar                Adequar servidor ao app.
+24/06       2  horas            Testar                   Testar aplicativo com servidor.
+
+Total       36 horas

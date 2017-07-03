@@ -1,5 +1,5 @@
 const Offer = require('mongoose').model('Offer')
-const { pageSize } = require('../../config/config')
+// const { pageSize } = require('../../config/config')
 
 /**
  * @module controller/offer 

@@ -12,11 +12,13 @@ module.exports = function () {
 		firstName: Faker.name.firstName(),
 		lastName: Faker.name.firstName(),
 
-		friends: [0,1,2],
+		friends: [Mongoose.Types.ObjectId(),
+		Mongoose.Types.ObjectId(),
+		Mongoose.Types.ObjectId()],
 
 		cpf: Faker.random.number(),
 		phone: Faker.random.number(),
-		
+
 		photo: Faker.image.people(),
 
 		email: Faker.internet.email(),

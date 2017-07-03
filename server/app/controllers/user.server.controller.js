@@ -1,6 +1,6 @@
 const User = require('mongoose').model('User')
 const Passport = require('passport')
-const { pageSize } = require('../../config/config')
+// const { pageSize } = require('../../config/config')
 
 /**
  * @module controller/user 

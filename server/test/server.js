@@ -5,7 +5,6 @@ const faker = require('faker')
 const assert = require('assert')
 const app = require('../index.js')
 const supertest = require('supertest')
-const { HTTP } = require('../config/config')
 const { isArray, isEqual } = require('lodash')
 
 const User = require('mongoose').model('User')

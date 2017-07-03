@@ -1,7 +1,6 @@
 /* eslint-env mocha */
 process.env.NODE_ENV = 'test'
-const fs = require('fs')
-const { CERT, KEY, DB } = require('../config/config')
+const { DB } = require('../config/config')
 
 const { readdirSync } = require('fs')
 const Mongoose = require('mongoose')

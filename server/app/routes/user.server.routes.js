@@ -27,11 +27,15 @@ module.exports = (app) => {
 /**
  * @apiDefine bodyUser
  * @apiParam (Objeto) {string} id id no banco de dados
- * @apiParam (Objeto) {number} permission nivel de permissao
+ * @apiParam (Objeto) {string} firstName nome do usuario
+ * @apiParam (Objeto) {string} lastName sobrenome do usuario
+ * @apiParam (Objeto) {object} friends lista de amigos do usuario
+ * @apiParam (Objeto) {string} cpf cadastro de pessoa fisica
+ * @apiParam (Objeto) {string} phone telefone do usuario
+ * @apiParam (Objeto) {string} photo fotografia do usuario
+ * @apiParam (Objeto) {string} email email do usuario
  * @apiParam (Objeto) {string} username nome de usuario unico
  * @apiParam (Objeto) {string} password senha para ser encriptada
- * @apiParam (Objeto) {string} person pessoa associada
- * @apiParam (Objeto) {string} ap ponto de acesso padrao
  */
 
 //=======================================================
@@ -41,11 +45,24 @@ module.exports = (app) => {
  * @apiSuccessExample {json} Response Body:
  *  [{
  *  	"id": "507f191e810c19729de860ez"
- *  	"permission": 1,
+ *  	"firstName": "joao",
+ *  	"lastName": "silva",
+ *  	"friends": [
+ *  		"507f191e810c19729de860ea",
+ *  		"507f191e810c19729de860eb"
+ *  	],
+ *  	"cpf": "12345678901",
+ *  	"phone": "55 61 9 9987-6543",
+ *  	"photo": "blob://asdasdasdad",
+ *  	"email": "example@example.com",
  *  	"username": "nomeSobrenome",
  *  	"password": "senhaForte123",
- *  	"person": "507f191e810c19729de860ea"
- *  	"ap": "507f191e810c19729de860eb"
+ *  	"routes": [
+ *  		"/api/admin": {
+ *   			"GET": true
+ *   			...
+ *  		}
+ *  	]
  *  }, ...]
  */
 
@@ -56,11 +73,24 @@ module.exports = (app) => {
  * @apiSuccessExample {json} Response Body:
  *  {
  *  	"id": "507f191e810c19729de860ez"
- *  	"permission": 1,
+ *  	"firstName": "joao",
+ *  	"lastName": "silva",
+ *  	"friends": [
+ *  		"507f191e810c19729de860ea",
+ *  		"507f191e810c19729de860eb"
+ *  	],
+ *  	"cpf": "12345678901",
+ *  	"phone": "55 61 9 9987-6543",
+ *  	"photo": "blob://asdasdasdad",
+ *  	"email": "example@example.com",
  *  	"username": "nomeSobrenome",
  *  	"password": "senhaForte123",
- *  	"person": "507f191e810c19729de860ea",
- *  	"ap": "507f191e810c19729de860eb"
+ *  	"routes": [
+ *  		"/api/admin": {
+ *   			"GET": true
+ *   			...
+ *  		}
+ *  	]
  *  }
  */
 
